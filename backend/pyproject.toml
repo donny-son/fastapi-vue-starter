@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "fastapi-vue"
+version = "0.1.0"
+description = ""
+authors = ["Dongook Son <60206749+donny-son@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastapi = "^0.81.0"
+uvicorn = "^0.18.3"
+
+[tool.poetry.dev-dependencies]
+debugpy = "^1.6.2"
+black = "^22.6.0"
+jedi-language-server = "^0.37.0"
+pre-commit = "^2.20.0"
+pytest = "^7.1.2"
+pytest-asyncio = "^0.18.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+# https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
+# Directories that are not visited by pytest collector:
+norecursedirs = [".git", "__pycache__"]
+doctest_optionflags = [
+  "NUMBER",
+  "NORMALIZE_WHITESPACE",
+  "IGNORE_EXCEPTION_DETAIL",
+]
+asyncio_mode = "auto"
+
+# Extra options:
+addopts = [
+  "--strict-markers",
+  "--tb=short",
+  "--doctest-modules",
+  "--doctest-continue-on-failure",
+]
