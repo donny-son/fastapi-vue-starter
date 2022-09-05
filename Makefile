@@ -12,7 +12,7 @@ install-env:
 
 .PHONY: install
 install:
-	docker compose up --build -d
+	docker compose --env-file .env up --build -d
 
 #* Cleaning
 .PHONY: env-remove
