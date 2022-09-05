@@ -5,16 +5,9 @@ SHELL := /usr/bin/env bash
 poetry-download:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | $(PYTHON) -
 
-.PHONY: pre-commit-install
-pre-commit-install:
-	cd backend && poetry run pre-commit install
-
 .PHONY: install
 install:
 	docker compose up --build -d
-
-.PHONY: install-dev
-install-dev: pre-commit-install install
 
 #* Cleaning
 .PHONY: pycache-remove
