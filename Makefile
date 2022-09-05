@@ -11,7 +11,7 @@ install-env:
 	cp .env ./backend/.env
 
 .PHONY: install
-install:
+install: install-env
 	docker compose --env-file .env up --build -d
 
 #* Cleaning
