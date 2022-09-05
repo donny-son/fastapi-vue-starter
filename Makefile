@@ -5,11 +5,21 @@ SHELL := /usr/bin/env bash
 poetry-download:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | $(PYTHON) -
 
+.PHONY: install-env
+install-env:
+	cp .env ./frontend/.env
+	cp .env ./backend/.env
+
 .PHONY: install
 install:
 	docker compose up --build -d
 
 #* Cleaning
+.PHONY: env-remove
+env-remove:
+	rm -f ./frontend/.env
+	rm -f ./backend/.env
+
 .PHONY: pycache-remove
 pycache-remove:
 	find . | grep -E "(__pycache__|\.pyc|\.pyo$$)" | xargs rm -rf
@@ -39,4 +49,4 @@ build-remove:
 	rm -rf ./frontend/dist/
 
 .PHONY: cleanup
-cleanup: pycache-remove dsstore-remove mypycache-remove ipynbcheckpoints-remove pytestcache-remove spidercache-remove build-remove
+cleanup: env-remove pycache-remove dsstore-remove mypycache-remove ipynbcheckpoints-remove pytestcache-remove spidercache-remove build-remove

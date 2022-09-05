@@ -9,7 +9,6 @@
 
 <script>
 import axios from "axios";
-
 export default {
   name: "PingItem",
   data() {
@@ -19,7 +18,7 @@ export default {
   },
   methods: {
     getMessage() {
-      axios.get("http://localhost:5335/")
+      axios.get("http://localhost:5335" + "/")
         .then((res) => {
           this.msg = res.data;
         })

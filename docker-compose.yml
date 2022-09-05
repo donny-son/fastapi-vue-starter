@@ -5,7 +5,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - 5335:5335
+      - ${FASTAPI_PORT}:5335
     volumes:
       - ./backend:/app
 
