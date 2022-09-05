@@ -5,8 +5,8 @@ import HelloWorld from "./components/HelloWorld.vue"
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="60" height="60" />
+    <img alt="FastAPI logo" class="logo" src="@/assets/fastapilogo.png" height="140"/>
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
@@ -27,8 +27,9 @@ header {
 }
 
 .logo {
-  display: block;
+  display: flex;
   margin: 0 auto 2rem;
+  place-items: center;
 }
 
 nav {

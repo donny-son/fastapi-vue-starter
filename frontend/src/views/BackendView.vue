@@ -42,6 +42,9 @@ export default {
     align-items: center;
   }
 }
+.backend h1 {
+  color: white;
+}
 
 .details {
   flex: 1;
