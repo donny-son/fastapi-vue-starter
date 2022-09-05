@@ -15,4 +15,3 @@ services:
       - 80:80
     volumes:
       - ./frontend:/app
-      - /app/node_modules
