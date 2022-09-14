@@ -1,8 +1,8 @@
 <template>
   <div class="backend">
     <h1>This message is from the backend!</h1>
-    <div class="details">
-      <p>{{ msg.message }}</p>
+    <div class="response">
+      {{ msg.message }}
     </div>
   </div>
 </template>
@@ -13,12 +13,13 @@ export default {
   name: "PingItem",
   data() {
     return {
+      base_url: "http://localhost:5335",
       msg: "",
     };
   },
   methods: {
     getMessage() {
-      axios.get("http://localhost:5335" + "/")
+      axios.get(this.base_url + "/")
         .then((res) => {
           this.msg = res.data;
         })
@@ -36,17 +37,18 @@ export default {
 <style>
 @media (min-width: 1024px) {
   .backend {
-    min-height: 100vh;
-    display: flex;
+    display: flex-col;
     align-items: center;
   }
 }
+
 .backend h1 {
   color: white;
 }
 
-.details {
-  flex: 1;
-  margin-left: 1rem;
+.response {
+  font-weight: bold;
+  font-size: x-large;
+  color: teal;
 }
 </style>

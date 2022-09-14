@@ -5,11 +5,12 @@ import HelloWorld from "./components/HelloWorld.vue"
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="60" height="60" />
-    <img alt="FastAPI logo" class="logo" src="@/assets/fastapilogo.png" height="140"/>
     <div class="wrapper">
+      <div class="logo">
+        <img alt="Vue logo" src="@/assets/logo.svg" height="60" />
+        <img alt="FastAPI logo" src="@/assets/fastapilogo.png" height="140" />
+      </div>
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/backend">Backend</RouterLink>
@@ -28,8 +29,8 @@ header {
 
 .logo {
   display: flex;
+  align-items: center;
   margin: 0 auto 2rem;
-  place-items: center;
 }
 
 nav {
